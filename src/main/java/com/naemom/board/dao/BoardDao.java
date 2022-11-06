@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.naemom.board.dao.vo.BoardVo;
 
@@ -16,7 +17,8 @@ import com.naemom.board.dao.vo.BoardVo;
  */
 @Mapper
 public interface BoardDao {
-
+	
+	
 	// 게시판 조회
 	public List<BoardVo> getListBoard();
 	

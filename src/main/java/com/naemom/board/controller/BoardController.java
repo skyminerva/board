@@ -2,8 +2,8 @@ package com.naemom.board.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.naemom.board.dao.vo.BoardVo;
 import com.naemom.board.service.BoardService;
 
 /**
@@ -39,7 +40,7 @@ public class BoardController {
 	 * @return
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String start(Locale locale, Model model) {
+	public String boardStart(Locale locale, Model model) {
 		
 		//로컬에서 date를 get
 		Date date = new Date();
@@ -62,9 +63,17 @@ public class BoardController {
 	 */
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ModelAndView listBoard() throws Exception {
+//	
+//	public String listBoard(Model model) throws Exception {
+//		
+//		List<BoardVo> boardVo = boardService.getListBoard();
+//		
+//		model.addAttribute("boardVo", boardVo);
+//
+//		return "board";
 		
 		// 조회 서비스를 수행 result 생성
-//		List<BoardVo> result = BoardService.getListBoard();
+		List<BoardVo> result = boardService.getListBoard();
 
 		// 화면정보를 담을 mav
 		ModelAndView mav = new ModelAndView();
@@ -73,7 +82,7 @@ public class BoardController {
 		mav.setViewName("/board");
 		
 		// 조회 결과 result를 화면 board에 넣는다.
-		mav.addObject("board");
+		mav.addObject("board", result);
 
 		return mav;
 	}
@@ -85,7 +94,7 @@ public class BoardController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
-	public ModelAndView boardNew() throws Exception {
+	public ModelAndView insertBoard() throws Exception {
 
 		// 화면 정보를 가질 mav 생성
 		ModelAndView mav = new ModelAndView();

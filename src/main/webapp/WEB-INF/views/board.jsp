@@ -50,13 +50,13 @@ td {
 			<!-- 게시글 리스트 -->
 			<c:forEach var="board" items="${boardList}">
 				<tr >
-					<td width="10%">${board.boardId}</td>
-					<td width="30%"><a href="/board/detail/${board.boardId}">${board.title}</a></td>
-					<td width="10%">${board.userName}</td>
-					<td width="9%">${board.birth}</td>
-					<td width="9%">${board.gender}</td>
-					<td width="15%"><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${board.createDate}" /></td>
-					<td width="15%"><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${board.updateDate }" /></td>
+					<td width="10%">${boardVo.boardId}</td>
+					<td width="30%">${boardVo.boardId}">${boardVo.title}</td>
+					<td width="10%">${boardVo.userName}</td>
+					<td width="9%"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVo.birth}"/></td>
+					<td width="9%">${boardVo.gender}</td>
+					<td width="15%"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVo.createDate}" /></td>
+					<td width="15%"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVo.updateDate }" /></td>
 				</tr>
 			</c:forEach>
 		</table>

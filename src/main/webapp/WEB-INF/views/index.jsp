@@ -16,7 +16,7 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${naemomboard}. </P>
+<P>  The time on the server is ${serverTime}. </P>
 
 <a href="/board/list"> 게시판 리스트 화면으로</a>
 

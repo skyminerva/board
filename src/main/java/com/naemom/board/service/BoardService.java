@@ -30,12 +30,10 @@ public class BoardService {
 	 * 게시판 조회
 	 * @return
 	 */
-	public List<BoardVo> getListBoard(){
-		
-		// 게시판 전체 조회
+	public List<BoardVo> getListBoard() throws Exception {
 		return boardDao.getListBoard();
-		
 	}
+	
 	/**
 	 * 게시판 등록 (등록할 파라미터)
 	 * @param title 

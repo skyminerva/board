@@ -12,7 +12,7 @@ import java.util.Date;
 public class BoardVo {
 	
 	// id
-	private int boardId;
+	private String boardId;
 	
 	// title
 	private String title;
@@ -36,10 +36,10 @@ public class BoardVo {
 	 * getter, setter
 	 * @return
 	 */
-	public Integer getBoardId() {
+	public String getBoardId() {
 		return boardId;
 	}
-	public void setBoardId(Integer boardId) {
+	public void setBoardId(String boardId) {
 		this.boardId = boardId;
 	}
 	public String getTitle() {
@@ -72,9 +72,7 @@ public class BoardVo {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public void setBoardId(int boardId) {
-		this.boardId = boardId;
-	}
+
 	public Date getCreateDate() {
 		return createDate;
 	}
@@ -97,7 +95,7 @@ public class BoardVo {
 	}
 	
 	// sql Ä®·³
-	public BoardVo(int boardId, String title, String contents, String userName, Date birth, String gender,
+	public BoardVo(String boardId, String title, String contents, String userName, Date birth, String gender,
 			Date createDate, Date updateDate) {
 		super();
 		this.boardId = boardId;
